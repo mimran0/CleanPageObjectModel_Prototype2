@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="AutomationScripts.Automation_Test_SuiteOne">
+        <methods>
+          <include name="TC_101_LoginCheck_AutomationObjectModel"/>
+          <include name="doBeforeEveryMethod"/>
+          <include name="SetUpPreDataMethod"/>
+        </methods>
+      </class> <!-- AutomationScripts.Automation_Test_SuiteOne -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

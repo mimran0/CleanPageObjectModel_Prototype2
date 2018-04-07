@@ -1,0 +1,78 @@
+/**
+ * 
+ */
+package ElementReporitoryAndMethodLibrary;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+/**
+ * @author Md Shahajada Imran
+ *
+ */
+public class AOL_HomePage extends CommonAPI {
+	// Objects are created below..
+		@FindBy(how = How.LINK_TEXT, using = "mdshahajadaimran")
+		private WebElement obj_UserName;
+		@FindBy(how = How.LINK_TEXT, using = "Logout")
+		private WebElement obj_LogOut;
+		@FindBy(how = How.LINK_TEXT, using = "Login / Join")
+		private WebElement obj_LoginOrJoin;		
+
+		// Object Creation Ends here..
+
+		// Reusable Methods/Functions are created below..
+		public WebElement obj_UserName() {
+			return obj_UserName;
+		}
+
+		public WebElement obj_LogOut() {
+			return obj_LogOut;
+		}
+
+		public WebElement obj_LoginOrJoin() {
+			return obj_LoginOrJoin;
+		}
+		
+
+		// Reusable Method/Function creation ends here. ...
+
+		// Constructors are created below
+		public AOL_HomePage(WebDriver driver) {
+			PageFactory.initElements(driver, this);
+		}
+
+		public AOL_HomePage() {
+		}// empty constructor.
+			// Constructor creation ends here
+
+		// Temporary Method.
+		public WebDriver TemporaryMethod_HomePage() {
+			LoginPasswordPage LoginPasswordPage = new LoginPasswordPage();
+			WebDriver driver = LoginPasswordPage.TemporaryMethod_LoginPasswordPage();
+			PageFactory.initElements(driver, this);
+			waitTime(3000);
+			//HighLight_Element(driver, obj_UserName);
+			//HighLight_Element(driver, obj_LogOut);
+			waitTime(3000);
+			obj_LogOut.click();
+			return driver;
+		}
+
+		// Temporary method is used to check if created elements are getting
+		// highlighted or not.
+		@Test(enabled = true)
+		public void TemporaryMethod_HomePage2() {
+			LoginPasswordPage LoginPasswordPage = new LoginPasswordPage();
+			WebDriver driver = LoginPasswordPage.TemporaryMethod_LoginPasswordPage();
+			PageFactory.initElements(driver, this);
+			waitTime(3000);
+			HighLight_Element(driver, obj_UserName);
+			HighLight_Element(driver, obj_LogOut);
+		}
+
+}
